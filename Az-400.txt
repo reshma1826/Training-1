@@ -1,0 +1,264 @@
+Blue Green Deployment
+	Zero Downtime Deployment
+
+Create the VM
+	Choose the RG
+		Name of the VM
+		Location -- East US
+		Image -- Windows 2019 Server
+		Size -- Standard_B2s
+		Username and Password (2 times)
+		RDP,HTTP,HTTPS
+		
+	Review + Create -- Validation Passed
+	Create
+
+--------------------------------------
+BREAK 3.00 PM -- 3.30PM
+--------------------------------------
+DevOps -- Development + Operations
+		Set of practices,tools and cultural philsophy that automate and integrate the processes between software dev and IT Teams
+
+Continuous Integration
+Continuous Deployment
+
+
+Azure DevOps -- SaaS Platform from microsoft that end-to-end devops tool chain
+
+			Jira (boards) -- Github -- Jenkins -- Nagios
+			Azure Boards -- Azure Repo -- Azure Pipelines
+
+dev.azure.com
+
+			Organization -- Devops Account name , can contain multiple projects
+				Allow users to seperate projects ,control access,Split the code,tests and pipelines
+  --  Project  -- places for users to plan,track progress and collab building solutions
+ 
+Azure DevOps Components
+	Boards -- Track work
+	Pipelines -- Build and Deploy
+	Repos -- Cloud Based Source Control
+	Test Plans -- Test Apps
+
+			Integrate -- Github,Slack
+		
+Azure Boards
+	Work Item 
+	Backlogs
+	Sprint
+	Dashboards
+
+All processes -- Basic -- when your team wants simplest model that uses issues,Tasks,Epics to track work
+
+Agile -- 
+
+
+Make Org Settings to Agile
+
+--------------------------------------
+
+Sprint -- Short term, time-boxed period when a scrum team works to complete set of work
+
+		2 week sprint
+		Tasks:
+				Create App Server
+				Create DB Server
+
+
+Epics -- Can be broken down into specific pieces of work called Features
+	Needs and Requests from the Customer or end users and is sized or split necessary to be delivered by the agile teams
+--------------------------------------
+Manage Source Control
+
+Using Central Version Control System : TFVC -- Team Foundation Version Control
+	Developers can used	to record changes that are made their source code files over time
+		ability to revert back to previous file version or previous to previous
+
+		Compare the changes between one version to another version
+		git -- tool
+Use Case:
+		Large Code Base
+		Specify fine grain permissions at the file level
+		lock files if required
+
+Distributed Version SYstem -- Ex.Git
+
+	Developer will create local copy of the entire repository -- Local Branch/New branch
+	WIll make the changes and commits locally
+	Pushes to the Changes to the server
+	
+
+Day 2
+Lab - Azure Repos - Team Foundation Version Control
+
+--------------------------------------
+
+Lab - Azure Repos – Git
+
+	Create a file locally -- Initialize empty git -- Add the files that need to be committed -- Commit the files locally -- Changes to the repo
+
+Download git-scm  for windows & Install
+Open the COmmand Prompt
+	git --version
+
+
+FOlder where file exists
+		git init
+		git add .
+		git commit -m "Second Commit"
+
+		Create a Repository in Azure DevOps
+			git push -u origin --all
+
+--------------------------------------
+
+
+Lab:
+		Create app service (azure portal)
+				.net
+				App Service Plan
+		Go to Visual Studio
+				Asp.net web application 
+						Deploy -- Build
+								 -- Publish Profile(Azure,App Service,Creden) -- Publish
+
+--------------------------------------
+
+Lab - Azure Repos - Git Branches
+
+D:\B>git branch feature-123
+
+D:\B>git branch
+  feature-123
+* master
+
+D:\B>git checkout feature-123
+Switched to branch 'feature-123'
+
+D:\B>git branch
+* feature-123
+  master
+
+
+D:\B>echo this is the feature branch > sample.txt
+
+D:\B>git add .
+
+D:\B>git commit -m "Feature-123 commit"
+[feature-123 ae896a6] Feature-123 commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+D:\B>more sample.txt
+this is the feature branch
+
+D:\B>git push origin --all
+
+
+D:\B>git log
+commit ae896a6e5bddef6797494aef2742670b5987b421 (HEAD -> feature-123, origin/feature-123)
+Author: Ganapathy <arvindancloud1982@gmail.com>
+Date:   Wed Oct 19 10:49:51 2022 +0530
+
+    Feature-123 commit
+
+-- Comment : this will add the code the feature-123 branch
+--------------------------------------
+
+Lab - Azure Repos - Pull requests
+
+		Developer made the changes to a particular branch in their local repository
+		Review has to be done -- Lead Developer  -- Pull request has been approved
+
+--------------------------------------
+
+SESSION WILL RESUME @ 11.45 AM
+
+--------------------------------------
+Lab - Visual Studio - Azure Repos – Git
+			
+			VS -- Create a ASP.net project
+					Team Explorer -- Connection to the Project(dev.azure.com)
+					Changes to the COde .. Git 
+					Team Expolrer -- Git Changes
+							Commit all -- Give Comment
+					Create a New Branch in (dev.azure.com)
+					Team Expolrer -- Push Changes to the new branch
+					Azure devops .. Pull Request
+						New Branch -- Master (optional Approver)
+					Approve.. Complete the request
+					
+--------------------------------------
+
+Code Review
+	Performing reviews of the application code 
+
+
+
+https://github.com/ 
+
+			Signup --  New account
+https://github.com/arvindancloud1982/pipeline
+--------------------------------------
+Lab - GitHub Code Scanning
+			Security Vulnerabilities and coding error in your source code
+			CodeQL
+			Semantic code analysis that treats code as data
+			FInd Potential Vulnerabilities
+	Lab : In Github
+		Security -- code scanning alerts --  CodeQL Analysis -- Start commit
+							Commit new file 
+		Action  -- Create .yml file -- Analysis
+		Security tab -- Check for the Vulnerabilities
+
+
+----------------------------
+
+Facilitate Communication and Collaboration
+What are Azure Boards
+	Service that help teams manage their software projects
+	SCRUM and Kanban
+	User stories,Backlog items,features,bugs that are associated with a project
+
+	Basic,SCRUM,Agile,CMMI
+
+
+
+Lab - Azure Boards - Team users
+	Organization Settings -- Users -- Add Users
+			Basic,Basic+Test Plans,Stake holder,VS Subscriber -- Enterprise,Professional	
+
+
+--------------------------------------
+
+Lab - Azure Boards - Charts
+Dashboard -- Linked to team or project
+Charts an Widgets
+		Burndown and BurnUp  
+	--Burndown Focuses on remaining work within a specific period of time
+	--Burnup -- Completed work  -- See that team is on track 
+
+cycle time -- time taken to close a work item after the work is started
+Lead time -- time taken to closea a work item after the work is created
+
+
+-------------------------------------
+
+Lab - Azure Boards – Slack 
+	Monitor the work item activity on Azure Boards project from a slack channel
+	Azure Boards app to Slack workspace
+		Azure Boards projects to azure boards app
+			
+			SIgnin --  /azboards signin -- Code will get generated
+					Add the Code in Slack
+			Successfully signed in to Azure Boards 
+    Link Azure Boards projects to azure boards app
+			/azboards link https://dev.azure.com/orgtest19821/testnewproj
+			/azboards subscriptions
+               Choose Subscription
+			Area path
+				Choose the Project
+					Event -- Work Item created
+						Save button
+	Go to Azure boards -- Create a issue -- Save 
+		In Slack notification
+		
