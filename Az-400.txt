@@ -1,7 +1,9 @@
 Blue Green Deployment
+----------------------
 	Zero Downtime Deployment
 
 Create the VM :
+----------------
 	Choose the RG
 		Name of the VM
 		Location -- East US
